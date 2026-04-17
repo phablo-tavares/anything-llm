@@ -1,0 +1,42 @@
+name: anythingllm-dev
+
+networks:
+  anything-llm-dev:
+    driver: bridge
+
+# Volumes nomeados para node_modules de cada servico.
+# Isso evita conflito com os node_modules do Windows (binarios incompativeis com Linux).
+# O Docker mantem node_modules isolados dentro do container.
+volumes:
+  server_nm:
+  collector_nm:
+  frontend_nm:
+
+services:
+  anythingllm-dev:
+    container_name: anythingllm-dev
+    build:
+      context: ../.
+      dockerfile: ./docker/Dockerfile.dev
+    cap_add:
+      - SYS_ADMIN
+    volumes:
+      # Codigo fonte montado do host (hot-reload funciona aqui)
+      - ../server:/app/server
+      - server_nm:/app/server/node_modules
+      - ../collector:/app/collector
+      - collector_nm:/app/collector/node_modules
+      - ../frontend:/app/frontend
+      - frontend_nm:/app/frontend/node_modules
+      - ../package.json:/app/package.json:ro
+    ports:
+      - "3001:3001"  # Server API
+      - "3000:3000"  # Frontend Vite
+      - "9229:9229"  # Node inspector (server)
+      - "9230:9230"  # Node inspector (collector)
+    networks:
+      - anything-llm-dev
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    stdin_open: true
+    tty: true

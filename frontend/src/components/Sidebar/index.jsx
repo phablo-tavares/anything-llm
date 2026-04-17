@@ -66,8 +66,14 @@ export default function Sidebar() {
                     <ActiveWorkspaces />
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 pb-3 rounded-b-[16px] bg-theme-bg-sidebar light:bg-slate-200 bg-opacity-80 backdrop-filter backdrop-blur-md z-10">
+                <div className="absolute bottom-0 left-0 right-0 pb-3 rounded-b-[16px] bg-theme-bg-sidebar light:bg-slate-200 bg-opacity-80 backdrop-filter backdrop-blur-md z-10 flex flex-col items-center">
                   <Footer />
+                  <Link
+                    to={paths.matrizRfm()}
+                    className="flex w-[80%] mx-auto items-center justify-center gap-x-2 py-2 px-4 mt-2 bg-theme-sidebar-item-hover text-white light:text-slate-800 rounded-lg hover:bg-theme-sidebar-item-selected transition-all duration-300"
+                  >
+                    <span className="text-sm font-semibold">Matriz RFM</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -176,8 +182,15 @@ export function SidebarMobileHeader() {
                   <ActiveWorkspaces />
                 </div>
               </div>
-              <div className="z-99 absolute bottom-0 left-0 right-0 pt-2 pb-6 rounded-br-[26px] bg-theme-bg-sidebar bg-opacity-80 backdrop-filter backdrop-blur-md">
+              <div className="z-99 absolute bottom-0 left-0 right-0 pt-2 pb-6 rounded-br-[26px] bg-theme-bg-sidebar bg-opacity-80 backdrop-filter backdrop-blur-md flex flex-col items-center">
                 <Footer />
+                <Link
+                  to={paths.matrizRfm()}
+                  onClick={() => setShowSidebar(false)}
+                  className="flex w-[80%] mx-auto items-center justify-center gap-x-2 py-2 px-4 mt-2 bg-theme-sidebar-item-hover text-white light:text-slate-800 rounded-lg hover:bg-theme-sidebar-item-selected transition-all duration-300"
+                >
+                  <span className="text-sm font-semibold">Matriz RFM</span>
+                </Link>
               </div>
             </div>
           </div>

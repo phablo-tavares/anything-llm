@@ -15,6 +15,9 @@ export default {
   home: () => {
     return "/";
   },
+  matrizRfm: () => {
+    return "/matriz-rfm";
+  },
   login: (noTry = false) => {
     return `/login${noTry ? "?nt=1" : ""}`;
   },

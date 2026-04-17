@@ -31,6 +31,15 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
+        path: "/matriz-rfm",
+        lazy: async () => {
+          const { default: ToolsPlaceholder } = await import(
+            "@/pages/ToolsPlaceholder"
+          );
+          return { element: <PrivateRoute Component={ToolsPlaceholder} /> };
+        },
+      },
+      {
         path: "/sso/simple",
         element: <SimpleSSOPassthrough />,
       },

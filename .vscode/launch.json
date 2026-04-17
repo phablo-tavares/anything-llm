@@ -69,6 +69,30 @@
       "name": "Launch Chrome against localhost",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Docker: Attach Server (9229)",
+      "port": 9229,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}/server",
+      "remoteRoot": "/app/server",
+      "restart": true,
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Docker: Attach Collector (9230)",
+      "port": 9230,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}/collector",
+      "remoteRoot": "/app/collector",
+      "restart": true,
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }
