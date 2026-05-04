@@ -38,6 +38,8 @@
 
 Chat with your docs. Automate complex workflows with AI Agents. Hyper-configurable, multi-user ready, battle-tested—and runs locally by default with zero setup friction.
 
+> Este projeto é um fork da ferramenta open source AnythingLLM, em desenvolvimento e customização para necessidades específicas.
+
 ![Chatting](https://github.com/Mintplex-Labs/anything-llm/releases/download/v1.11.2/AnythingLLM720p.gif)
 
 <details>
