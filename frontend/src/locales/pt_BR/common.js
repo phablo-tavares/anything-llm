@@ -111,7 +111,7 @@ const TRANSLATIONS = {
   },
   login: {
     "multi-user": {
-      welcome: "Bem-vindo ao",
+      welcome: "Bem-vindo ao Rennova AI",
       "placeholder-username": "Nome de usuário",
       "placeholder-password": "Senha",
       login: "Login",
@@ -119,7 +119,7 @@ const TRANSLATIONS = {
       "forgot-pass": "Esqueci a senha",
       reset: "Redefinir",
     },
-    "sign-in": "Acesse sua {{appName}} conta.",
+    "sign-in": "Acesse sua conta.",
     "password-reset": {
       title: "Redefinição de Senha",
       description:
